@@ -8,13 +8,14 @@ export const usePizza = defineStore({
     card: [],
     cardBasket: JSON.parse(localStorage.getItem("cardBasket")) || [],
     category: "",
+    sort: '',
     products: [
-      { id: 0, name: "Все", btnActive: true },
-      { id: 1, name: "Мясные", btnActive: true },
-      { id: 2, name: "Вегетарианская", btnActive: true },
-      { id: 3, name: "Гриль", btnActive: true },
-      { id: 4, name: "Острые", btnActive: true },
-      { id: 5, name: "Закрытые", btnActive: true },
+      { name: "Все", btnActive: true },
+      { name: "Мясные", btnActive: true },
+      { name: "Вегетарианская", btnActive: true },
+      { name: "Гриль", btnActive: true },
+      { name: "Острые", btnActive: true },
+      { name: "Закрытые", btnActive: true },
     ],
     sort: [
       { id: 1, name: "По пулярности", isActive: true },
@@ -42,6 +43,7 @@ export const usePizza = defineStore({
           el.amount = 0;
           el.total = 0;
         });
+
         this.card = res.data;
       } catch (error) {
         console.error("Произошла ошибка", error);
@@ -94,11 +96,6 @@ export const usePizza = defineStore({
     },
     saveCardBasket() {
       localStorage.setItem("cardBasket", JSON.stringify(this.cardBasket));
-    },
-    filterCategory(id) {
-      return this.card.filter(
-        (item) => item.category === this.products.find((p) => p.id === id).name
-      );
     },
   },
 });

@@ -7,6 +7,25 @@
   flex-direction: column;
   gap: 35px;
 
+  &__pagination {
+    display: flex;
+    gap: 15px;
+    transition: .5s linear;
+
+    >div {
+      border: 1px solid red;
+      width: max-content;
+      padding: 8px 16px;
+      border-radius: 50%;
+      transition: .3s linear;
+
+      &:hover {
+        background: #eb5a1e;
+        color: #f3f3f3;
+      }
+    }
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -26,6 +45,11 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+}
+
+.pageActive {
+  background: #eb5a1e;
+  color: #f3f3f3;
 }
 
 .card {
