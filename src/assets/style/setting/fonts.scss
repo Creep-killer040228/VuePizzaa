@@ -1,0 +1,8 @@
+// $Proximanova: (600, "Bold.otf"), (700, "Exstrabold.otf"), (400, "Regular.ttf");
+// @each $weigth, $name in $Proximanova {
+//   @font-face {
+//     font-family: "";
+//     src: url(@/fonts/proximanova_#{$name});
+//     font-weight: $weigth;
+//   }
+// }
