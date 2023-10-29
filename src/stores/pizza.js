@@ -11,11 +11,11 @@ export const usePizza = defineStore({
     category: "",
     products: [
       { category: 0, name: "Все", btnActive: true },
-      { category: 0, name: "Мясные", btnActive: true },
-      { category: 1, name: "Вегетарианская", btnActive: true },
-      { category: 2, name: "Гриль", btnActive: true },
-      { category: 3, name: "Острые", btnActive: true },
-      { category: 4, name: "Закрытые", btnActive: true },
+      { category: 1, name: "Мясные", btnActive: true },
+      { category: 2, name: "Вегетарианская", btnActive: true },
+      { category: 3, name: "Гриль", btnActive: true },
+      { category: 4, name: "Острые", btnActive: true },
+      { category: 5, name: "Закрытые", btnActive: true },
     ],
     sort: [
       { id: 1, name: "По пулярности", isActive: true },
