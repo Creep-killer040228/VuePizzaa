@@ -13,6 +13,6 @@
 import Pizzalist from "@/components/pizza/Pizzalist.vue";
 import SortCategory from "@/components/sort/SortCategory.vue";
 import SortProduct from "@/components/sort/SortProduct.vue";
-import Header from "../../components/header/Header.vue";
+import Header from "@/components/header/Header.vue";
 </script>
 

@@ -6,16 +6,16 @@ export const usePizza = defineStore({
   state: () => ({
     amounts: 0,
     card: [],
+    originalCard: [],
     cardBasket: JSON.parse(localStorage.getItem("cardBasket")) || [],
     category: "",
-    sort: '',
     products: [
-      { name: "Все", btnActive: true },
-      { name: "Мясные", btnActive: true },
-      { name: "Вегетарианская", btnActive: true },
-      { name: "Гриль", btnActive: true },
-      { name: "Острые", btnActive: true },
-      { name: "Закрытые", btnActive: true },
+      { category: 0, name: "Все", btnActive: true },
+      { category: 0, name: "Мясные", btnActive: true },
+      { category: 1, name: "Вегетарианская", btnActive: true },
+      { category: 2, name: "Гриль", btnActive: true },
+      { category: 3, name: "Острые", btnActive: true },
+      { category: 4, name: "Закрытые", btnActive: true },
     ],
     sort: [
       { id: 1, name: "По пулярности", isActive: true },
@@ -30,6 +30,7 @@ export const usePizza = defineStore({
     amountTotal() {
       return this.cardBasket.reduce((total, card) => total + card.amount, 0);
     },
+
   },
   actions: {
     async getPizza(category) {
@@ -43,8 +44,8 @@ export const usePizza = defineStore({
           el.amount = 0;
           el.total = 0;
         });
-
         this.card = res.data;
+        this.originalCard = res.data;
       } catch (error) {
         console.error("Произошла ошибка", error);
       }
